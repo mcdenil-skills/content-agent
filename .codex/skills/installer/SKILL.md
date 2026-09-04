@@ -11,7 +11,7 @@ allowed-tools: Bash, Read, Edit, Glob
 
 Метафора для ученика: инструменты лежат не у него дома, а на складе курса в интернете. Ты идёшь на склад, берёшь нужный инструмент, ставишь на рабочий стол (`.claude/skills/`) - и он включается. Всё сам, ученик руками ничего не качает.
 
-> **Склад курса** - публичный репозиторий `https://github.com/Ntmib/content-agent`, папка `skills/`. Каждый скилл - подпапка `skills/<имя>/`. Ты качаешь ТОЛЬКО нужную подпапку, а не весь склад. Механика проверена вживую.
+> **Склад курса** - публичный репозиторий `https://github.com/mcdenil-skills/content-agent`, папка `skills/`. Каждый скилл - подпапка `skills/<имя>/`. Ты качаешь ТОЛЬКО нужную подпапку, а не весь склад. Механика проверена вживую.
 
 ## Шаг 0. Пойми, какой скилл просят
 
@@ -30,7 +30,7 @@ allowed-tools: Bash, Read, Edit, Glob
 Выполни ровно эту команду, подставив `<имя>` папки скилла из карты названий (в двух местах в конце):
 
 ```bash
-TMP=$(mktemp -d) && git clone --no-checkout --depth 1 https://github.com/Ntmib/content-agent.git "$TMP/sklad" && cd "$TMP/sklad" && git sparse-checkout init --no-cone && printf '/skills/<имя>/\n' > .git/info/sparse-checkout && git checkout main && cd - && mkdir -p .claude/skills/<имя> .codex/skills/<имя> && cp -r "$TMP/sklad/skills/<имя>/." .claude/skills/<имя>/ && cp -r "$TMP/sklad/skills/<имя>/." .codex/skills/<имя>/
+TMP=$(mktemp -d) && git clone --no-checkout --depth 1 https://github.com/mcdenil-skills/content-agent.git "$TMP/sklad" && cd "$TMP/sklad" && git sparse-checkout init --no-cone && printf '/skills/<имя>/\n' > .git/info/sparse-checkout && git checkout main && cd - && mkdir -p .claude/skills/<имя> .codex/skills/<имя> && cp -r "$TMP/sklad/skills/<имя>/." .claude/skills/<имя>/ && cp -r "$TMP/sklad/skills/<имя>/." .codex/skills/<имя>/
 ```
 
 **Почему именно так, не меняй схему:**

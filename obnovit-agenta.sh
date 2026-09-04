@@ -17,7 +17,7 @@
 set -euo pipefail
 
 main() {
-  SKLAD="https://github.com/Ntmib/content-agent.git"
+  SKLAD="https://github.com/mcdenil-skills/content-agent.git"
   TMP=".obnovlenie-tmp"
 
   # Папки, которые обновляются целиком.
