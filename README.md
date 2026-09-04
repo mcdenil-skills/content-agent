@@ -33,12 +33,12 @@
 
 Открой Claude Code в пустой папке и попроси агента человеческими словами:
 
-> Склонируй репозиторий https://github.com/Ntmib/content-agent в эту папку, но НЕ скачивай папку `skills` (это склад на будущее). Потом отвяжи папку от git и расскажи простыми словами, что за папки появились.
+> Склонируй репозиторий https://github.com/mcdenil-skills/content-agent в эту папку, но НЕ скачивай папку `skills` (это склад на будущее). Потом отвяжи папку от git и расскажи простыми словами, что за папки появились.
 
 Агент сделает всё сам. Если ему нужны точные команды - вот они:
 
 ```bash
-git clone --no-checkout --depth 1 https://github.com/Ntmib/content-agent.git .
+git clone --no-checkout --depth 1 https://github.com/mcdenil-skills/content-agent.git .
 git sparse-checkout init --no-cone
 printf '/*\n!/skills/\n' > .git/info/sparse-checkout
 git checkout main
